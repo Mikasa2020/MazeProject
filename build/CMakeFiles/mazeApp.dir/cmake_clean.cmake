@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/mazeApp.dir/Cell.cpp.o"
-  "CMakeFiles/mazeApp.dir/Cell.cpp.o.d"
-  "CMakeFiles/mazeApp.dir/Maze.cpp.o"
-  "CMakeFiles/mazeApp.dir/Maze.cpp.o.d"
-  "CMakeFiles/mazeApp.dir/main.cpp.o"
-  "CMakeFiles/mazeApp.dir/main.cpp.o.d"
+  "CMakeFiles/mazeApp.dir/src/Cell.cpp.o"
+  "CMakeFiles/mazeApp.dir/src/Cell.cpp.o.d"
+  "CMakeFiles/mazeApp.dir/src/Maze.cpp.o"
+  "CMakeFiles/mazeApp.dir/src/Maze.cpp.o.d"
+  "CMakeFiles/mazeApp.dir/src/main.cpp.o"
+  "CMakeFiles/mazeApp.dir/src/main.cpp.o.d"
   "mazeApp"
   "mazeApp.pdb"
 )

@@ -72,60 +72,60 @@ include CMakeFiles/mazeApp.dir/flags.make
 CMakeFiles/mazeApp.dir/codegen:
 .PHONY : CMakeFiles/mazeApp.dir/codegen
 
-CMakeFiles/mazeApp.dir/main.cpp.o: CMakeFiles/mazeApp.dir/flags.make
-CMakeFiles/mazeApp.dir/main.cpp.o: /Users/wangweijia/code/Projects/maze/main.cpp
-CMakeFiles/mazeApp.dir/main.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mazeApp.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/main.cpp.o -MF CMakeFiles/mazeApp.dir/main.cpp.o.d -o CMakeFiles/mazeApp.dir/main.cpp.o -c /Users/wangweijia/code/Projects/maze/main.cpp
+CMakeFiles/mazeApp.dir/src/main.cpp.o: CMakeFiles/mazeApp.dir/flags.make
+CMakeFiles/mazeApp.dir/src/main.cpp.o: /Users/wangweijia/code/Projects/maze/src/main.cpp
+CMakeFiles/mazeApp.dir/src/main.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mazeApp.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/src/main.cpp.o -MF CMakeFiles/mazeApp.dir/src/main.cpp.o.d -o CMakeFiles/mazeApp.dir/src/main.cpp.o -c /Users/wangweijia/code/Projects/maze/src/main.cpp
 
-CMakeFiles/mazeApp.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mazeApp.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangweijia/code/Projects/maze/main.cpp > CMakeFiles/mazeApp.dir/main.cpp.i
+CMakeFiles/mazeApp.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mazeApp.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangweijia/code/Projects/maze/src/main.cpp > CMakeFiles/mazeApp.dir/src/main.cpp.i
 
-CMakeFiles/mazeApp.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mazeApp.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangweijia/code/Projects/maze/main.cpp -o CMakeFiles/mazeApp.dir/main.cpp.s
+CMakeFiles/mazeApp.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mazeApp.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangweijia/code/Projects/maze/src/main.cpp -o CMakeFiles/mazeApp.dir/src/main.cpp.s
 
-CMakeFiles/mazeApp.dir/Cell.cpp.o: CMakeFiles/mazeApp.dir/flags.make
-CMakeFiles/mazeApp.dir/Cell.cpp.o: /Users/wangweijia/code/Projects/maze/Cell.cpp
-CMakeFiles/mazeApp.dir/Cell.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mazeApp.dir/Cell.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/Cell.cpp.o -MF CMakeFiles/mazeApp.dir/Cell.cpp.o.d -o CMakeFiles/mazeApp.dir/Cell.cpp.o -c /Users/wangweijia/code/Projects/maze/Cell.cpp
+CMakeFiles/mazeApp.dir/src/Cell.cpp.o: CMakeFiles/mazeApp.dir/flags.make
+CMakeFiles/mazeApp.dir/src/Cell.cpp.o: /Users/wangweijia/code/Projects/maze/src/Cell.cpp
+CMakeFiles/mazeApp.dir/src/Cell.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/mazeApp.dir/src/Cell.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/src/Cell.cpp.o -MF CMakeFiles/mazeApp.dir/src/Cell.cpp.o.d -o CMakeFiles/mazeApp.dir/src/Cell.cpp.o -c /Users/wangweijia/code/Projects/maze/src/Cell.cpp
 
-CMakeFiles/mazeApp.dir/Cell.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mazeApp.dir/Cell.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangweijia/code/Projects/maze/Cell.cpp > CMakeFiles/mazeApp.dir/Cell.cpp.i
+CMakeFiles/mazeApp.dir/src/Cell.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mazeApp.dir/src/Cell.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangweijia/code/Projects/maze/src/Cell.cpp > CMakeFiles/mazeApp.dir/src/Cell.cpp.i
 
-CMakeFiles/mazeApp.dir/Cell.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mazeApp.dir/Cell.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangweijia/code/Projects/maze/Cell.cpp -o CMakeFiles/mazeApp.dir/Cell.cpp.s
+CMakeFiles/mazeApp.dir/src/Cell.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mazeApp.dir/src/Cell.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangweijia/code/Projects/maze/src/Cell.cpp -o CMakeFiles/mazeApp.dir/src/Cell.cpp.s
 
-CMakeFiles/mazeApp.dir/Maze.cpp.o: CMakeFiles/mazeApp.dir/flags.make
-CMakeFiles/mazeApp.dir/Maze.cpp.o: /Users/wangweijia/code/Projects/maze/Maze.cpp
-CMakeFiles/mazeApp.dir/Maze.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mazeApp.dir/Maze.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/Maze.cpp.o -MF CMakeFiles/mazeApp.dir/Maze.cpp.o.d -o CMakeFiles/mazeApp.dir/Maze.cpp.o -c /Users/wangweijia/code/Projects/maze/Maze.cpp
+CMakeFiles/mazeApp.dir/src/Maze.cpp.o: CMakeFiles/mazeApp.dir/flags.make
+CMakeFiles/mazeApp.dir/src/Maze.cpp.o: /Users/wangweijia/code/Projects/maze/src/Maze.cpp
+CMakeFiles/mazeApp.dir/src/Maze.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/mazeApp.dir/src/Maze.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/src/Maze.cpp.o -MF CMakeFiles/mazeApp.dir/src/Maze.cpp.o.d -o CMakeFiles/mazeApp.dir/src/Maze.cpp.o -c /Users/wangweijia/code/Projects/maze/src/Maze.cpp
 
-CMakeFiles/mazeApp.dir/Maze.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mazeApp.dir/Maze.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangweijia/code/Projects/maze/Maze.cpp > CMakeFiles/mazeApp.dir/Maze.cpp.i
+CMakeFiles/mazeApp.dir/src/Maze.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mazeApp.dir/src/Maze.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangweijia/code/Projects/maze/src/Maze.cpp > CMakeFiles/mazeApp.dir/src/Maze.cpp.i
 
-CMakeFiles/mazeApp.dir/Maze.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mazeApp.dir/Maze.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangweijia/code/Projects/maze/Maze.cpp -o CMakeFiles/mazeApp.dir/Maze.cpp.s
+CMakeFiles/mazeApp.dir/src/Maze.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mazeApp.dir/src/Maze.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangweijia/code/Projects/maze/src/Maze.cpp -o CMakeFiles/mazeApp.dir/src/Maze.cpp.s
 
 # Object files for target mazeApp
 mazeApp_OBJECTS = \
-"CMakeFiles/mazeApp.dir/main.cpp.o" \
-"CMakeFiles/mazeApp.dir/Cell.cpp.o" \
-"CMakeFiles/mazeApp.dir/Maze.cpp.o"
+"CMakeFiles/mazeApp.dir/src/main.cpp.o" \
+"CMakeFiles/mazeApp.dir/src/Cell.cpp.o" \
+"CMakeFiles/mazeApp.dir/src/Maze.cpp.o"
 
 # External object files for target mazeApp
 mazeApp_EXTERNAL_OBJECTS =
 
-mazeApp: CMakeFiles/mazeApp.dir/main.cpp.o
-mazeApp: CMakeFiles/mazeApp.dir/Cell.cpp.o
-mazeApp: CMakeFiles/mazeApp.dir/Maze.cpp.o
+mazeApp: CMakeFiles/mazeApp.dir/src/main.cpp.o
+mazeApp: CMakeFiles/mazeApp.dir/src/Cell.cpp.o
+mazeApp: CMakeFiles/mazeApp.dir/src/Maze.cpp.o
 mazeApp: CMakeFiles/mazeApp.dir/build.make
 mazeApp: CMakeFiles/mazeApp.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable mazeApp"

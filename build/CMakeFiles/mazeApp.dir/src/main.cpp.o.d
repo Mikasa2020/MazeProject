@@ -1,7 +1,7 @@
-CMakeFiles/mazeApp.dir/Maze.cpp.o: \
-  /Users/wangweijia/code/Projects/maze/Maze.cpp \
-  /Users/wangweijia/code/Projects/maze/Maze.h \
-  /Users/wangweijia/code/Projects/maze/Cell.h \
+CMakeFiles/mazeApp.dir/src/main.cpp.o: \
+  /Users/wangweijia/code/Projects/maze/src/main.cpp \
+  /Users/wangweijia/code/Projects/maze/include/Maze.h \
+  /Users/wangweijia/code/Projects/maze/include/Cell.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h \

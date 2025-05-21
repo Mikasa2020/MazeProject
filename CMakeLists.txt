@@ -15,5 +15,17 @@ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_CLANG)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -g")
 endif()
 
+
+
 #添加可执行文件目标
-add_executable(mazeApp main.cpp Cell.cpp Maze.cpp)
+add_executable(mazeApp
+    src/main.cpp 
+    src/Cell.cpp 
+    src/Maze.cpp
+)
+
+target_include_directories(mazeApp PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+# 或者，如果你的 CMakeLists.txt 就位于项目根目录，下面这个更简洁的写法也一样：
+# target_include_directories(mazeApp PUBLIC include)

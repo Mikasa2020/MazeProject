@@ -129,77 +129,77 @@ mazeApp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/build
 .PHONY : mazeApp/fast
 
-Cell.o: Cell.cpp.o
-.PHONY : Cell.o
+src/Cell.o: src/Cell.cpp.o
+.PHONY : src/Cell.o
 
 # target to build an object file
-Cell.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/Cell.cpp.o
-.PHONY : Cell.cpp.o
+src/Cell.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Cell.cpp.o
+.PHONY : src/Cell.cpp.o
 
-Cell.i: Cell.cpp.i
-.PHONY : Cell.i
+src/Cell.i: src/Cell.cpp.i
+.PHONY : src/Cell.i
 
 # target to preprocess a source file
-Cell.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/Cell.cpp.i
-.PHONY : Cell.cpp.i
+src/Cell.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Cell.cpp.i
+.PHONY : src/Cell.cpp.i
 
-Cell.s: Cell.cpp.s
-.PHONY : Cell.s
+src/Cell.s: src/Cell.cpp.s
+.PHONY : src/Cell.s
 
 # target to generate assembly for a file
-Cell.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/Cell.cpp.s
-.PHONY : Cell.cpp.s
+src/Cell.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Cell.cpp.s
+.PHONY : src/Cell.cpp.s
 
-Maze.o: Maze.cpp.o
-.PHONY : Maze.o
+src/Maze.o: src/Maze.cpp.o
+.PHONY : src/Maze.o
 
 # target to build an object file
-Maze.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/Maze.cpp.o
-.PHONY : Maze.cpp.o
+src/Maze.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Maze.cpp.o
+.PHONY : src/Maze.cpp.o
 
-Maze.i: Maze.cpp.i
-.PHONY : Maze.i
+src/Maze.i: src/Maze.cpp.i
+.PHONY : src/Maze.i
 
 # target to preprocess a source file
-Maze.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/Maze.cpp.i
-.PHONY : Maze.cpp.i
+src/Maze.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Maze.cpp.i
+.PHONY : src/Maze.cpp.i
 
-Maze.s: Maze.cpp.s
-.PHONY : Maze.s
+src/Maze.s: src/Maze.cpp.s
+.PHONY : src/Maze.s
 
 # target to generate assembly for a file
-Maze.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/Maze.cpp.s
-.PHONY : Maze.cpp.s
+src/Maze.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Maze.cpp.s
+.PHONY : src/Maze.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -210,15 +210,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mazeApp"
-	@echo "... Cell.o"
-	@echo "... Cell.i"
-	@echo "... Cell.s"
-	@echo "... Maze.o"
-	@echo "... Maze.i"
-	@echo "... Maze.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/Cell.o"
+	@echo "... src/Cell.i"
+	@echo "... src/Cell.s"
+	@echo "... src/Maze.o"
+	@echo "... src/Maze.i"
+	@echo "... src/Maze.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

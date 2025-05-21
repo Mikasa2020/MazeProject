@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/wangweijia/code/Projects/maze/Cell.cpp" "CMakeFiles/mazeApp.dir/Cell.cpp.o" "gcc" "CMakeFiles/mazeApp.dir/Cell.cpp.o.d"
-  "/Users/wangweijia/code/Projects/maze/Maze.cpp" "CMakeFiles/mazeApp.dir/Maze.cpp.o" "gcc" "CMakeFiles/mazeApp.dir/Maze.cpp.o.d"
-  "/Users/wangweijia/code/Projects/maze/main.cpp" "CMakeFiles/mazeApp.dir/main.cpp.o" "gcc" "CMakeFiles/mazeApp.dir/main.cpp.o.d"
+  "/Users/wangweijia/code/Projects/maze/src/Cell.cpp" "CMakeFiles/mazeApp.dir/src/Cell.cpp.o" "gcc" "CMakeFiles/mazeApp.dir/src/Cell.cpp.o.d"
+  "/Users/wangweijia/code/Projects/maze/src/Maze.cpp" "CMakeFiles/mazeApp.dir/src/Maze.cpp.o" "gcc" "CMakeFiles/mazeApp.dir/src/Maze.cpp.o.d"
+  "/Users/wangweijia/code/Projects/maze/src/main.cpp" "CMakeFiles/mazeApp.dir/src/main.cpp.o" "gcc" "CMakeFiles/mazeApp.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
