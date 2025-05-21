@@ -1,0 +1,3 @@
+/Users/wangweijia/code/Projects/maze/build/CMakeFiles/mazeApp.dir
+/Users/wangweijia/code/Projects/maze/build/CMakeFiles/edit_cache.dir
+/Users/wangweijia/code/Projects/maze/build/CMakeFiles/rebuild_cache.dir
