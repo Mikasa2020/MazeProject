@@ -224,7 +224,7 @@ void Maze::carvePassagesFrom(Cell &current_cell, std::mt19937 &g){
         //检测是否被访问
         if(next_cell.isVisited()){
             //DEBUG
-            continue;;
+            continue;
         }
         //打破墙
         breakWalls(current_cell, next_cell);

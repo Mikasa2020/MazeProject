@@ -129,6 +129,198 @@ mazeApp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/build
 .PHONY : mazeApp/fast
 
+lib/glad/src/glad.o: lib/glad/src/glad.c.o
+.PHONY : lib/glad/src/glad.o
+
+# target to build an object file
+lib/glad/src/glad.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o
+.PHONY : lib/glad/src/glad.c.o
+
+lib/glad/src/glad.i: lib/glad/src/glad.c.i
+.PHONY : lib/glad/src/glad.i
+
+# target to preprocess a source file
+lib/glad/src/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.i
+.PHONY : lib/glad/src/glad.c.i
+
+lib/glad/src/glad.s: lib/glad/src/glad.c.s
+.PHONY : lib/glad/src/glad.s
+
+# target to generate assembly for a file
+lib/glad/src/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.s
+.PHONY : lib/glad/src/glad.c.s
+
+lib/imgui-1.91.9/backends/imgui_impl_glfw.o: lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_glfw.o
+
+# target to build an object file
+lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o
+
+lib/imgui-1.91.9/backends/imgui_impl_glfw.i: lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.i
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.i
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.i
+
+lib/imgui-1.91.9/backends/imgui_impl_glfw.s: lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.s
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.s
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.s
+
+lib/imgui-1.91.9/backends/imgui_impl_opengl3.o: lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_opengl3.o
+
+# target to build an object file
+lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o
+
+lib/imgui-1.91.9/backends/imgui_impl_opengl3.i: lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.i
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.i
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.i
+
+lib/imgui-1.91.9/backends/imgui_impl_opengl3.s: lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.s
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.s
+.PHONY : lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.s
+
+lib/imgui-1.91.9/imgui.o: lib/imgui-1.91.9/imgui.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui.o
+
+# target to build an object file
+lib/imgui-1.91.9/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui.cpp.o
+
+lib/imgui-1.91.9/imgui.i: lib/imgui-1.91.9/imgui.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui.i
+
+# target to preprocess a source file
+lib/imgui-1.91.9/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui.cpp.i
+
+lib/imgui-1.91.9/imgui.s: lib/imgui-1.91.9/imgui.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui.s
+
+# target to generate assembly for a file
+lib/imgui-1.91.9/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui.cpp.s
+
+lib/imgui-1.91.9/imgui_demo.o: lib/imgui-1.91.9/imgui_demo.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui_demo.o
+
+# target to build an object file
+lib/imgui-1.91.9/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui_demo.cpp.o
+
+lib/imgui-1.91.9/imgui_demo.i: lib/imgui-1.91.9/imgui_demo.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui_demo.i
+
+# target to preprocess a source file
+lib/imgui-1.91.9/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui_demo.cpp.i
+
+lib/imgui-1.91.9/imgui_demo.s: lib/imgui-1.91.9/imgui_demo.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui_demo.s
+
+# target to generate assembly for a file
+lib/imgui-1.91.9/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui_demo.cpp.s
+
+lib/imgui-1.91.9/imgui_draw.o: lib/imgui-1.91.9/imgui_draw.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui_draw.o
+
+# target to build an object file
+lib/imgui-1.91.9/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui_draw.cpp.o
+
+lib/imgui-1.91.9/imgui_draw.i: lib/imgui-1.91.9/imgui_draw.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui_draw.i
+
+# target to preprocess a source file
+lib/imgui-1.91.9/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui_draw.cpp.i
+
+lib/imgui-1.91.9/imgui_draw.s: lib/imgui-1.91.9/imgui_draw.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui_draw.s
+
+# target to generate assembly for a file
+lib/imgui-1.91.9/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui_draw.cpp.s
+
+lib/imgui-1.91.9/imgui_tables.o: lib/imgui-1.91.9/imgui_tables.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui_tables.o
+
+# target to build an object file
+lib/imgui-1.91.9/imgui_tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui_tables.cpp.o
+
+lib/imgui-1.91.9/imgui_tables.i: lib/imgui-1.91.9/imgui_tables.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui_tables.i
+
+# target to preprocess a source file
+lib/imgui-1.91.9/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui_tables.cpp.i
+
+lib/imgui-1.91.9/imgui_tables.s: lib/imgui-1.91.9/imgui_tables.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui_tables.s
+
+# target to generate assembly for a file
+lib/imgui-1.91.9/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui_tables.cpp.s
+
+lib/imgui-1.91.9/imgui_widgets.o: lib/imgui-1.91.9/imgui_widgets.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui_widgets.o
+
+# target to build an object file
+lib/imgui-1.91.9/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o
+.PHONY : lib/imgui-1.91.9/imgui_widgets.cpp.o
+
+lib/imgui-1.91.9/imgui_widgets.i: lib/imgui-1.91.9/imgui_widgets.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui_widgets.i
+
+# target to preprocess a source file
+lib/imgui-1.91.9/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.i
+.PHONY : lib/imgui-1.91.9/imgui_widgets.cpp.i
+
+lib/imgui-1.91.9/imgui_widgets.s: lib/imgui-1.91.9/imgui_widgets.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui_widgets.s
+
+# target to generate assembly for a file
+lib/imgui-1.91.9/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.s
+.PHONY : lib/imgui-1.91.9/imgui_widgets.cpp.s
+
 src/Cell.o: src/Cell.cpp.o
 .PHONY : src/Cell.o
 
@@ -177,6 +369,30 @@ src/Maze.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Maze.cpp.s
 .PHONY : src/Maze.cpp.s
 
+src/Renderer.o: src/Renderer.cpp.o
+.PHONY : src/Renderer.o
+
+# target to build an object file
+src/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Renderer.cpp.o
+.PHONY : src/Renderer.cpp.o
+
+src/Renderer.i: src/Renderer.cpp.i
+.PHONY : src/Renderer.i
+
+# target to preprocess a source file
+src/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Renderer.cpp.i
+.PHONY : src/Renderer.cpp.i
+
+src/Renderer.s: src/Renderer.cpp.s
+.PHONY : src/Renderer.s
+
+# target to generate assembly for a file
+src/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Renderer.cpp.s
+.PHONY : src/Renderer.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -210,12 +426,39 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... mazeApp"
+	@echo "... lib/glad/src/glad.o"
+	@echo "... lib/glad/src/glad.i"
+	@echo "... lib/glad/src/glad.s"
+	@echo "... lib/imgui-1.91.9/backends/imgui_impl_glfw.o"
+	@echo "... lib/imgui-1.91.9/backends/imgui_impl_glfw.i"
+	@echo "... lib/imgui-1.91.9/backends/imgui_impl_glfw.s"
+	@echo "... lib/imgui-1.91.9/backends/imgui_impl_opengl3.o"
+	@echo "... lib/imgui-1.91.9/backends/imgui_impl_opengl3.i"
+	@echo "... lib/imgui-1.91.9/backends/imgui_impl_opengl3.s"
+	@echo "... lib/imgui-1.91.9/imgui.o"
+	@echo "... lib/imgui-1.91.9/imgui.i"
+	@echo "... lib/imgui-1.91.9/imgui.s"
+	@echo "... lib/imgui-1.91.9/imgui_demo.o"
+	@echo "... lib/imgui-1.91.9/imgui_demo.i"
+	@echo "... lib/imgui-1.91.9/imgui_demo.s"
+	@echo "... lib/imgui-1.91.9/imgui_draw.o"
+	@echo "... lib/imgui-1.91.9/imgui_draw.i"
+	@echo "... lib/imgui-1.91.9/imgui_draw.s"
+	@echo "... lib/imgui-1.91.9/imgui_tables.o"
+	@echo "... lib/imgui-1.91.9/imgui_tables.i"
+	@echo "... lib/imgui-1.91.9/imgui_tables.s"
+	@echo "... lib/imgui-1.91.9/imgui_widgets.o"
+	@echo "... lib/imgui-1.91.9/imgui_widgets.i"
+	@echo "... lib/imgui-1.91.9/imgui_widgets.s"
 	@echo "... src/Cell.o"
 	@echo "... src/Cell.i"
 	@echo "... src/Cell.s"
 	@echo "... src/Maze.o"
 	@echo "... src/Maze.i"
 	@echo "... src/Maze.s"
+	@echo "... src/Renderer.o"
+	@echo "... src/Renderer.i"
+	@echo "... src/Renderer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

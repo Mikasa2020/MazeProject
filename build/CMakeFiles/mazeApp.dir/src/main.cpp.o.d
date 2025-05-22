@@ -1,12 +1,8 @@
 CMakeFiles/mazeApp.dir/src/main.cpp.o: \
   /Users/wangweijia/code/Projects/maze/src/main.cpp \
-  /Users/wangweijia/code/Projects/maze/include/Maze.h \
-  /Users/wangweijia/code/Projects/maze/include/Cell.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/iterator_operations.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/iter_swap.h \
+  /Users/wangweijia/code/Projects/maze/lib/glad/include/glad/glad.h \
+  /Users/wangweijia/code/Projects/maze/lib/glad/include/KHR/khrplatform.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__config_site \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__configuration/abi.h \
@@ -14,6 +10,47 @@ CMakeFiles/mazeApp.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__configuration/platform.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__configuration/availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__configuration/language.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint8_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint16_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint32_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint64_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_symbol_aliasing.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_posix_availability.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/ptrcheck.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h \
+  /opt/homebrew/include/GLFW/glfw3.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stddef.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_header_macro.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_ptrdiff_t.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_size_t.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_wchar_t.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_null.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_nullptr_t.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_max_align_t.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_offsetof.h \
+  /Users/wangweijia/code/Projects/maze/include/Maze.h \
+  /Users/wangweijia/code/Projects/maze/include/Cell.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/vector \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/copy_move_common.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/iterator_operations.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/iter_swap.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/declval.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/swap.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/enable_if.h \
@@ -28,17 +65,6 @@ CMakeFiles/mazeApp.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_nothrow_constructible.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_swappable.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__cstddef/size_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stddef.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stddef.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stddef.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_header_macro.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_ptrdiff_t.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_size_t.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_wchar_t.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_null.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_nullptr_t.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_max_align_t.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/__stddef_offsetof.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/void_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__utility/move.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/conditional.h \
@@ -161,29 +187,6 @@ CMakeFiles/mazeApp.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_trivially_constructible.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_trivially_copyable.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdint \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/stdint.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/stdint.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint8_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint16_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint32_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint64_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_symbol_aliasing.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_posix_availability.h \
-  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/ptrcheck.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_types.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_trivially_destructible.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_unsigned.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/is_volatile.h \
@@ -830,6 +833,18 @@ CMakeFiles/mazeApp.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_random_bit_generator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
+  /Users/wangweijia/code/Projects/maze/include/Renderer.h \
+  /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui.h \
+  /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imconfig.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/float.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/17/include/float.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/float.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
+  /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/backends/imgui_impl_opengl3.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/TargetConditionals.h \
+  /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/backends/imgui_impl_glfw.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__ostream/basic_ostream.h \

@@ -85,12 +85,12 @@ clean: CMakeFiles/mazeApp.dir/clean
 CMakeFiles/mazeApp.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=1,2,3,4 "Built target mazeApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target mazeApp"
 .PHONY : CMakeFiles/mazeApp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mazeApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangweijia/code/Projects/maze/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangweijia/code/Projects/maze/build/CMakeFiles 13
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/mazeApp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wangweijia/code/Projects/maze/build/CMakeFiles 0
 .PHONY : CMakeFiles/mazeApp.dir/rule
@@ -102,7 +102,7 @@ mazeApp: CMakeFiles/mazeApp.dir/rule
 # codegen rule for target.
 CMakeFiles/mazeApp.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target mazeApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Finished codegen for target mazeApp"
 .PHONY : CMakeFiles/mazeApp.dir/codegen
 
 # clean rule for target.
