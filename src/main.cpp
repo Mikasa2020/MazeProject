@@ -21,8 +21,8 @@ int g_mazeHeight = 15;           // 默认迷宫高度
 float g_cellSize = 20.0f;        // 每个格子在屏幕上绘制的像素大小
 
 bool show_demo_window = false; // Demo 窗口可以默认不显示，或者通过菜单控制
-bool show_maze_controls_window = true;
-bool show_maze_view_window = true;
+bool show_maze_controls_window = false;
+bool show_maze_view_window = false;
 
 //函数声明
 void error_callback(int error, const char *description);
@@ -48,21 +48,151 @@ int main(){
         ImGui_ImplGlfw_NewFrame();    // 通知 GLFW 平台后端新的一帧 (处理输入, 更新DisplaySize等)
         ImGui::NewFrame();            // ImGui 核心库开始新的一帧 (g.WithinFrameScope 在此变为 true)
 
+        //--- 创建一个填满整个 GLFW 窗口的“主画布”ImGui 窗口 ---
+        ImGuiIO& io = ImGui::GetIO();
+        ImGui::SetNextWindowPos(ImVec2(0.0f, 0.0f));
+        ImGui::SetNextWindowSize(io.DisplaySize);
+
+        // 设置窗口标志，使其没有标题栏、不可移动、不可调整大小
+        ImGuiWindowFlags main_canvas_flags = 
+            // ImGuiWindowFlags_NoTitleBar |
+            // ImGuiWindowFlags_NoResize |
+            // ImGuiWindowFlags_NoMove |
+            // ImGuiWindowFlags_NoCollapse |
+            ImGuiWindowFlags_NoDecoration | // 无装饰（推荐，替代多个No...标志）
+            ImGuiWindowFlags_NoSavedSettings | //不保存窗口位置/大小状态
+            ImGuiWindowFlags_NoBringToFrontOnFocus | // 当点击时不自动将此窗口带到最前（因为它是背景)
+            ImGuiWindowFlags_MenuBar; //// 在这个主画布顶部添加一个菜单栏
+
+        // 将样式设置包裹 MainApplicationCanvas 的 Begin/End
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f)); // 让 MainCanvas 内部无边距
+
+        ImGui::Begin("MainApplicationCanvas", nullptr, main_canvas_flags); // nullptr 表示没有关闭按钮
+        ImGui::PopStyleVar(3); // 对应上面的三个 PushStyleVar
+        
+        // --- 主菜单栏 (应该在 MainApplicationCanvas 的 Begin 和 End 之间) ---
+        if (ImGui::BeginMainMenuBar()) {
+            if (ImGui::BeginMenu("File")) {
+                if (ImGui::MenuItem("Exit")) { glfwSetWindowShouldClose(window, true); }
+                ImGui::EndMenu();
+            }
+            if (ImGui::BeginMenu("View")) {
+                ImGui::MenuItem("Show Demo Window", nullptr, &show_demo_window);
+                ImGui::MenuItem("Show Maze Controls", nullptr, &show_maze_controls_window);
+                ImGui::MenuItem("Show Maze View", nullptr, &show_maze_view_window);
+                ImGui::EndMenu();
+            }
+            ImGui::EndMainMenuBar();
+        }
+
+        // --- 在 MainApplicationCanvas 内部定义固定布局 ---
+        float controls_panel_width = 300.0f; // 控制面板宽度
+        float status_bar_height = ImGui::GetTextLineHeightWithSpacing() * 1.5f; // 底部状态栏高度
+
+        // --- 左侧控制面板子窗口 ---
+        ImGui::BeginChild("Controlsgegion", ImVec2(controls_panel_width, -status_bar_height), true, ImGuiWindowFlags_None);
+        // true 表示带边框，ImGuiWindowFlags_None 表示默认子窗口行为
+        // ImVec2(controls_panel_width, 0) 中，高度为0表示自动填充父窗口的剩余可用高度 (减去状态栏高度，如果状态栏在它之后)
+        // 如果状态栏在底部，这里的0会填充到状态栏上方
+        ImGui::Text("Mize parameter siting:");
+
+        // 为了避免拖动滑块时频繁重新生成迷宫，我们使用临时的 static 变量来接收滑块的输入
+        // 只有当点击“生成”按钮时，或者当这些临时值与实际值不同且用户希望应用时，才更新全局变量并重新生成
+        static int input_maze_width = g_mazeWidth;
+        static int input_maze_height = g_mazeHeight;
+
+        // 宽度Sliderint
+        ImGui::SliderInt("Width", &input_maze_width, 5, 100);   // 最小值5，最大值100
+        // 高度Sliderint
+        ImGui::SliderInt("Height", &input_maze_height, 5, 100);  // 最小值5，最大值100
+        // 格子大小的滑块可以直接修改全局变量，因为它只影响显示，不影响迷宫结构
+        ImGui::SliderFloat("Cell Size", &g_cellSize, 5.0f, 40.0f, "%.1f pixels");
+        
+        bool regenerate_button_pressed = ImGui::Button("create new maze");
+        if(regenerate_button_pressed){
+            if(input_maze_width > 0 && input_maze_height > 0){
+                //改变生成高度
+                g_mazeWidth = input_maze_width;
+                g_mazeHeight = input_maze_height;
+                //如果存在旧迷宫
+                if(g_myMaze){
+                    delete g_myMaze;
+                    g_myMaze = nullptr;
+                }
+                //生成新迷宫
+                try{
+                    std::cout << "Button Pressed: Regeneraing maze and size: "
+                                << "Width: " << g_mazeWidth
+                                << "Height: " << g_mazeHeight << std::endl;
+
+                    g_myMaze = new Maze(g_mazeWidth, g_mazeHeight);
+                    g_myMaze->generate();
+                    std::cout << "Maze regenerated." << std::endl;
+                    // 显示迷宫窗口
+                    show_maze_view_window = true;
+                }catch (const std::exception& e){
+                    std::cerr << "Error regenerating maze: " << e.what() << std::endl;
+                    if (g_myMaze) { delete g_myMaze; g_myMaze = nullptr; }
+                }
+            }
+        }
+        ImGui::Separator();
+        ImGui::Checkbox("Show ImGui Demo window", &show_demo_window);
+
+        ImGui::EndChild(); // 结束 ControlsRegion 子窗口
+        // --- 左窗口结束 ---
+
+        // --- 右侧迷宫视图子窗口 ---
+        ImGui::SameLine(); // 让下一个子窗口在控制面板的右边
+        ImGui::BeginChild("MazeViewRegion", ImVec2(0, -status_bar_height), true, ImGuiWindowFlags_None);
+
+        if(g_myMaze){
+            ImVec2 canvas_p0 = ImGui::GetCursorScreenPos(); // 获取当前子窗口内容区的绘图起点
+            g_mazeRenderer.renderMaze(*g_myMaze, canvas_p0, g_cellSize);
+            // 告诉 ImGui 迷宫绘制内容有多大
+            float rendered_maze_width = static_cast<float>(g_myMaze->getWidth()) * g_cellSize;
+            float rendered_maze_height = static_cast<float>(g_myMaze->getHeight()) * g_cellSize;
+            ImGui::Dummy(ImVec2(rendered_maze_width, rendered_maze_height));
+        }else{
+            ImGui::Text("Create New Maze!!!");
+            ImGui::Dummy(ImVec2(200, 100)); // 给提示文本一个最小空间
+        }
+        ImGui::EndChild();
+        // --- 右窗口结束 ---
+        
+        // --- 底部状态栏 ---
+        ImGui::BeginChild("StatusBarRegion", ImVec2(0, 0), true, ImGuiWindowFlags_NoScrollbar);
+        ImGui::Text("Maze Status Size: %dx%d", g_mazeWidth, g_mazeHeight);
+        ImGui::EndChild();
+
+        /*
         if (show_maze_view_window) {
-            ImGui::Begin("MazeView", &show_maze_view_window);
             if (g_myMaze != nullptr) { // <--- 添加这个检查
-                //std::cout << "DEBUG: g_myMaze is valid. Width: " << g_myMaze->getWidth()
-                //        << ", Height: " << g_myMaze->getHeight() << std::endl; // 调试输出
-                ImVec2 canvas_p0 = ImGui::GetCursorScreenPos();
-                g_mazeRenderer.renderMaze(*g_myMaze, canvas_p0, g_cellSize);
+                float maze_pixel_width = static_cast<float>(g_myMaze->getWidth()) * g_cellSize;
+                float maze_pixel_height = static_cast<float>(g_myMaze->getHeight()) * g_cellSize;
+
+                ImGui::SetNextWindowContentSize(ImVec2(maze_pixel_width, maze_pixel_height));
             } else {
                 //ImGui::Text("错误：迷宫对象 (g_myMaze) 为空指针!");
                 //std::cout << "DEBUG: g_myMaze is nullptr!" << std::endl; // 调试输出
+                ImGui::SetNextWindowSize(ImVec2(300, 100), ImGuiCond_FirstUseEver);
+            }
+            ImGui::Begin("MazeView", &show_maze_view_window);
+
+            if(g_myMaze != nullptr){
+                // 获取光标位置，这是在 "MazeView" 窗口内部内容区的当前可用绘图起点
+                ImVec2 canvas_p0 = ImGui::GetCursorScreenPos();
+                // 渲染迷宫到当前窗口
+                g_mazeRenderer.renderMaze(*g_myMaze, canvas_p0, g_cellSize);
+            }else{
+                ImGui::Text("g_myMaze is nullptr! ");
             }
             ImGui::End();
         }
 
-
+        
         // --- DEMO ---
         if (show_demo_window) {
             ImGui::ShowDemoWindow(&show_demo_window);
@@ -79,57 +209,72 @@ int main(){
             static int input_maze_width = g_mazeWidth;
             static int input_maze_height = g_mazeHeight;
 
-            // ImGui::InputInt("宽度", &input_maze_width); // 也可以用 InputInt
-            // ImGui::InputInt("高度", &input_maze_height);
-            ImGui::SliderInt("Width", &input_maze_width, 5, 100);   // 最小值5，最大值100
-            ImGui::SliderInt("Height", &input_maze_height, 5, 100);  // 最小值5，最大值100
-            
-            // 格子大小的滑块可以直接修改全局变量，因为它只影响显示，不影响迷宫结构
-            ImGui::SliderFloat("Cell Size", &g_cellSize, 5.0f, 40.0f, "%.1f pixels");
+            // 用 ImGui::CollapsingHeader("分类标题") 组织窗口
+           // ImGui::SetNextItemWidth(width_per_header);
+            if(ImGui::CollapsingHeader("MazeSize Siting")){
+                // 宽度Sliderint
+                ImGui::SliderInt("Width", &input_maze_width, 5, 100);   // 最小值5，最大值100
+                // 高度Sliderint
+                ImGui::SliderInt("Height", &input_maze_height, 5, 100);  // 最小值5，最大值100
+                // 格子大小的滑块可以直接修改全局变量，因为它只影响显示，不影响迷宫结构
+                ImGui::SliderFloat("Cell Size", &g_cellSize, 5.0f, 40.0f, "%.1f pixels");
+            }
 
+            //ImGui::SetNextItemWidth(width_per_header);
+            if(ImGui::CollapsingHeader("operate")){
+                bool regenerate_button_pressed = ImGui::Button("create new maze");
+                if(regenerate_button_pressed){
+                    if(input_maze_width > 0 && input_maze_height > 0){
+                        //改变生成高度
+                        g_mazeWidth = input_maze_width;
+                        g_mazeHeight = input_maze_height;
+                        //如果存在旧迷宫
+                        if(g_myMaze){
+                            delete g_myMaze;
+                            g_myMaze = nullptr;
+                        }
+                        //生成新迷宫
+                        try{
+                            std::cout << "Button Pressed: Regeneraing maze and size: "
+                                      << "Width: " << g_mazeWidth
+                                      << "Height: " << g_mazeHeight << std::endl;
+
+                            g_myMaze = new Maze(g_mazeWidth, g_mazeHeight);
+                            g_myMaze->generate();
+                            std::cout << "Maze regenerated." << std::endl;
+                            // 显示迷宫窗口
+                            show_maze_view_window = true;
+                        }catch (const std::exception& e){
+                            std::cerr << "Error regenerating maze: " << e.what() << std::endl;
+                            if (g_myMaze) { delete g_myMaze; g_myMaze = nullptr; }
+                        }
+                    }
+                }
+            }
+            //Demo
+            if(ImGui::CollapsingHeader("View options")){
+                ImGui::Checkbox("Show ImGui Demo window", &show_demo_window);
+            }
+            //-----------------组织窗口-----------------
+
+            //----------------
             ImGui::Separator();
 
             ImGui::Text("Current Mazesize: %d x %d", g_mazeWidth, g_mazeHeight);
             ImGui::Text("Size to be generated: %d x %d", input_maze_width, input_maze_height);
-
-            bool regenerate_button_pressed = ImGui::Button("create new maze");
-            // 如果用户修改了宽度或高度的滑块，并且希望这些改动立即生效（或者配合按钮）
-            // 这里我们设计为：按钮按下时，采用滑块的当前值
-            if (regenerate_button_pressed) {
-                if (input_maze_width > 0 && input_maze_height > 0) {
-                    // 更新全局的迷宫尺寸变量
-                    g_mazeWidth = input_maze_width;
-                    g_mazeHeight = input_maze_height;
-
-                    // 删除旧迷宫（如果存在）
-                    if (g_myMaze) {
-                        delete g_myMaze;
-                        g_myMaze = nullptr;
-                    }
-                    // 创建并生成新迷宫
-                    try {
-                        std::cout << "Button pressed: Regenerating maze with size: "
-                                << g_mazeWidth << "x" << g_mazeHeight << std::endl;
-                        g_myMaze = new Maze(g_mazeWidth, g_mazeHeight);
-                        g_myMaze->generate(); // 调用你的迷宫生成函数
-                        // 你可能还想清除旧的路径标记（如果你的 Maze 类有 resetPathFlags）
-                        // g_myMaze->resetPathFlags(); 
-                        std::cout << "Maze regenerated." << std::endl;
-                    } catch (const std::exception& e) {
-                        std::cerr << "Error regenerating maze: " << e.what() << std::endl;
-                        if (g_myMaze) { delete g_myMaze; g_myMaze = nullptr; }
-                    }
-                } else {
-                    // 如果输入的宽高无效，可以在这里给用户一些提示
-                    ImGui::TextColored(ImVec4(1.0f, 0.0f, 0.0f, 1.0f), "Error: Width must be positive!");
-                }
-            }
             
-            ImGui::Separator();
-            // 控制 Demo 窗口的显示
-            ImGui::Checkbox("Show ImGui Demo window", &show_demo_window);
+
             ImGui::End();
         }//if
+        */
+
+        if (show_demo_window){
+            ImGui::ShowDemoWindow(&show_demo_window);
+        }
+
+        ImGui::End();
+
+        // --- 渲染 ---
         ImGui::Render();
 
         // 4. OpenGL 绘制准备：获取帧缓冲大小并设置视口，然后清屏
@@ -208,7 +353,44 @@ bool initialize_app_environment(){
     ImGuiIO &io = ImGui::GetIO(); (void)io;
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
 
+    // --- 字体 ---
+    const ImWchar* default_ranges = io.Fonts->GetGlyphRangesDefault();
+    //添加字体文件
+    float font_size_pixels = 40.0f;
+    //字体文件路径
+    const char* font_path = "fonts/OpenSans-Light.ttf";
+    ImFont* new_default_font = io.Fonts->AddFontFromFileTTF(font_path, font_size_pixels, nullptr, nullptr);
+
+
+    if (new_default_font != nullptr) {
+        io.FontDefault = new_default_font; // 设置为 imgui 的默认字体
+        std::cout << "Successfully loaded font: " << font_path << " and set as default." << std::endl;
+    }else{
+        std::cerr << "Failed to load font: " << font_path << ". Using ImGui's embedded default font." << std::endl;
+        io.Fonts->AddFontDefault(); // 加载 ImGui 内嵌的 ProggyClean 字体作为备用
+    }
+
+    // --- 字体 UI 缩放 ---
+    io.FontGlobalScale = 0.5f;
+
+    //imgui主题
     ImGui::StyleColorsDark();
+
+    //imgui style
+    ImGuiStyle& style = ImGui::GetStyle();
+
+    style.WindowPadding = ImVec2(10.0f, 10.0f); // 窗口内边距
+    style.FramePadding = ImVec2(5.0f, 5.0f);    // 控件内边距
+    style.ItemSpacing = ImVec2(8.0f, 6.0f);     // 控件之间间距
+    style.WindowRounding = 5.0f;                // 窗口圆角
+    style.FrameRounding = 4.0f;                 // 控件边框圆角
+    style.GrabRounding = 4.0f;                  // 滑块等可拖动部分的圆角
+
+    // 修改特定控件的颜色
+    style.Colors[ImGuiCol_Button] = ImVec4(0.26f, 0.59f, 0.98f, 0.70f); // 按钮颜色
+    style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.26f, 0.59f, 0.98f, 1.00f);
+    style.Colors[ImGuiCol_Header] = ImVec4(0.20f, 0.25f, 0.29f, 0.55f); // CollapsingHeader 颜色
+        
 
     //设置平台和渲染器后端
     if(!ImGui_ImplGlfw_InitForOpenGL(window, true)){
