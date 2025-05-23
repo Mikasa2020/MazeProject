@@ -345,6 +345,30 @@ src/Cell.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/Cell.cpp.s
 .PHONY : src/Cell.cpp.s
 
+src/DFSMazeGenerator.o: src/DFSMazeGenerator.cpp.o
+.PHONY : src/DFSMazeGenerator.o
+
+# target to build an object file
+src/DFSMazeGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o
+.PHONY : src/DFSMazeGenerator.cpp.o
+
+src/DFSMazeGenerator.i: src/DFSMazeGenerator.cpp.i
+.PHONY : src/DFSMazeGenerator.i
+
+# target to preprocess a source file
+src/DFSMazeGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.i
+.PHONY : src/DFSMazeGenerator.cpp.i
+
+src/DFSMazeGenerator.s: src/DFSMazeGenerator.cpp.s
+.PHONY : src/DFSMazeGenerator.s
+
+# target to generate assembly for a file
+src/DFSMazeGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mazeApp.dir/build.make CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.s
+.PHONY : src/DFSMazeGenerator.cpp.s
+
 src/Maze.o: src/Maze.cpp.o
 .PHONY : src/Maze.o
 
@@ -453,6 +477,9 @@ help:
 	@echo "... src/Cell.o"
 	@echo "... src/Cell.i"
 	@echo "... src/Cell.s"
+	@echo "... src/DFSMazeGenerator.o"
+	@echo "... src/DFSMazeGenerator.i"
+	@echo "... src/DFSMazeGenerator.s"
 	@echo "... src/Maze.o"
 	@echo "... src/Maze.i"
 	@echo "... src/Maze.s"

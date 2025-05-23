@@ -35,6 +35,7 @@ add_executable(mazeApp
     src/Cell.cpp 
     src/Maze.cpp
     src/Renderer.cpp
+    src/DFSMazeGenerator.cpp
     ${GLAD_SOURCES}
     ${IMGUI_SOURCES}
 )

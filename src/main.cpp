@@ -5,6 +5,8 @@
 #include "Maze.h"
 #include "Cell.h"
 #include "Renderer.h"
+#include "IMazeGenerator.h"
+#include "DFSMazeGenerator.h"
 #include "imgui_impl_opengl3.h"
 #include "imgui_impl_glfw.h"
 #include <iostream>
@@ -14,6 +16,13 @@
 GLFWwindow* window = nullptr;
 ImVec4 clear_color = ImVec4(0.1f, 0.1f, 0.15f, 1.00f);
 const char *glsl_version = "#version 330 core";
+
+IMazeGenerator* g_current_maze_generator = nullptr; 
+int g_selected_algorithm_idx = 0; // 0 for DFS(1 for Prim ...)
+std::mt19937 g_random_engine; // 全局随机数引擎
+bool g_isGeneratingMaze = false;  // 是否正在逐步生成
+float g_generationStepDelay = 0.05f; //延迟
+float g_timeSinceLastStep = 0.0f;
 
 Maze* g_myMaze = nullptr;        // 全局迷宫对象指针
 int g_mazeWidth = 20;            // 默认迷宫宽度
@@ -48,6 +57,26 @@ int main(){
         ImGui_ImplGlfw_NewFrame();    // 通知 GLFW 平台后端新的一帧 (处理输入, 更新DisplaySize等)
         ImGui::NewFrame();            // ImGui 核心库开始新的一帧 (g.WithinFrameScope 在此变为 true)
 
+        // 生成步骤调用
+        // 
+        if (g_isGeneratingMaze && g_myMaze && g_current_maze_generator) {
+            // 累加自上一帧到当前帧到时间差
+            g_timeSinceLastStep += ImGui::GetIO().DeltaTime;
+
+            //判断是否达到了执行下一步生成操作的延时条件
+            if (g_timeSinceLastStep >= g_generationStepDelay || g_generationStepDelay == 0.0f) { // 允许延时为0立即执行
+
+                //达到延时，执行下一步迷宫生成算法
+                if (!g_current_maze_generator->step(*g_myMaze, g_random_engine)) {
+                    //如果 step（）返回false， 表示完成
+                    g_isGeneratingMaze = false; // 生成器报告完成，将标志设为 false;
+                    std::cout << "Maze generation algorithm reported complete." << std::endl;
+                }
+                // 重置计时器，为下一步延时做准备
+                g_timeSinceLastStep = 0.0f;
+            }
+        }
+
         //--- 创建一个填满整个 GLFW 窗口的“主画布”ImGui 窗口 ---
         ImGuiIO& io = ImGui::GetIO();
         ImGui::SetNextWindowPos(ImVec2(0.0f, 0.0f));
@@ -65,12 +94,13 @@ int main(){
             ImGuiWindowFlags_MenuBar; //// 在这个主画布顶部添加一个菜单栏
 
         // 将样式设置包裹 MainApplicationCanvas 的 Begin/End
-        ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
-        ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
-        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f)); // 让 MainCanvas 内部无边距
+        // ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+        // ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+        // ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f)); // 让 MainCanvas 内部无边距
 
         ImGui::Begin("MainApplicationCanvas", nullptr, main_canvas_flags); // nullptr 表示没有关闭按钮
-        ImGui::PopStyleVar(3); // 对应上面的三个 PushStyleVar
+        // ImGui::PopStyleVar(3); // 对应上面的三个 PushStyleVar
+        
         
         // --- 主菜单栏 (应该在 MainApplicationCanvas 的 Begin 和 End 之间) ---
         if (ImGui::BeginMainMenuBar()) {
@@ -80,10 +110,11 @@ int main(){
             }
             if (ImGui::BeginMenu("View")) {
                 ImGui::MenuItem("Show Demo Window", nullptr, &show_demo_window);
-                ImGui::MenuItem("Show Maze Controls", nullptr, &show_maze_controls_window);
-                ImGui::MenuItem("Show Maze View", nullptr, &show_maze_view_window);
+                //ImGui::MenuItem("Show Maze Controls", nullptr, &show_maze_controls_window);
+                //ImGui::MenuItem("Show Maze View", nullptr, &show_maze_view_window);
                 ImGui::EndMenu();
             }
+
             ImGui::EndMainMenuBar();
         }
 
@@ -92,6 +123,8 @@ int main(){
         float status_bar_height = ImGui::GetTextLineHeightWithSpacing() * 1.5f; // 底部状态栏高度
 
         // --- 左侧控制面板子窗口 ---
+        ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 10.0f); // 为接下来的子窗口设置10px圆角
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(8.0f, 8.0f)); // 给子窗口设置内边距
         ImGui::BeginChild("Controlsgegion", ImVec2(controls_panel_width, -status_bar_height), true, ImGuiWindowFlags_None);
         // true 表示带边框，ImGuiWindowFlags_None 表示默认子窗口行为
         // ImVec2(controls_panel_width, 0) 中，高度为0表示自动填充父窗口的剩余可用高度 (减去状态栏高度，如果状态栏在它之后)
@@ -111,6 +144,7 @@ int main(){
         ImGui::SliderFloat("Cell Size", &g_cellSize, 5.0f, 40.0f, "%.1f pixels");
         
         bool regenerate_button_pressed = ImGui::Button("create new maze");
+        /* 不需要的生成 老方法
         if(regenerate_button_pressed){
             if(input_maze_width > 0 && input_maze_height > 0){
                 //改变生成高度
@@ -138,13 +172,56 @@ int main(){
                 }
             }
         }
-        ImGui::Separator();
-        ImGui::Checkbox("Show ImGui Demo window", &show_demo_window);
+        */
+
+        if(regenerate_button_pressed){
+            if(input_maze_width > 0 && input_maze_height > 0){
+                g_mazeWidth = input_maze_width;
+                g_mazeHeight = input_maze_height;
+
+                //清空指针
+                if(g_myMaze){delete g_myMaze;}
+                g_myMaze = new Maze(g_mazeWidth, g_mazeHeight); // 创建新的迷宫实例
+
+                if(g_current_maze_generator){delete g_current_maze_generator;}
+
+                //清空生成器，创建新的生成器
+                if(g_selected_algorithm_idx == 0){ // 0 为 DFS
+                    g_current_maze_generator = new DFSMazeGenerator();
+                }
+                //else Prim...
+
+                //确认生成器和迷宫
+                if(g_current_maze_generator && g_myMaze){
+                    std::random_device rd;
+                    g_random_engine.seed(rd());
+
+                    // 随机选择一个起点
+                    std::uniform_int_distribution<> distrib_row(0, g_myMaze->getHeight() - 1);
+                    std::uniform_int_distribution<> distrib_col(0, g_myMaze->getWidth() - 1);
+                    int start_r = distrib_row(g_random_engine);
+                    int start_c = distrib_col(g_random_engine);
+
+                    //开始生成
+                    g_current_maze_generator->start(*g_myMaze, start_r, start_c, g_random_engine);
+                    g_isGeneratingMaze = true;
+
+                    g_timeSinceLastStep = 0.0f;
+                    std::cout << "Maze generation process started with "
+                      << (g_selected_algorithm_idx == 0 ? "DFS" : "Other") << std::endl;
+                }
+            }else{
+                std::cerr << "Failed to creat Maze" << std::endl;
+            }
+        }
 
         ImGui::EndChild(); // 结束 ControlsRegion 子窗口
+        ImGui::PopStyleVar(2); // 弹出为 ControlsRegion 设置的两个样式 (ChildRounding, WindowPadding)
         // --- 左窗口结束 ---
 
         // --- 右侧迷宫视图子窗口 ---
+        ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, 10.0f);
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(8.0f, 8.0f)); // 给子窗口设置内边距 
         ImGui::SameLine(); // 让下一个子窗口在控制面板的右边
         ImGui::BeginChild("MazeViewRegion", ImVec2(0, -status_bar_height), true, ImGuiWindowFlags_None);
 
@@ -160,12 +237,15 @@ int main(){
             ImGui::Dummy(ImVec2(200, 100)); // 给提示文本一个最小空间
         }
         ImGui::EndChild();
+        ImGui::PopStyleVar(); // 弹出为 MazeViewRegion 设置的 WindowPadding
         // --- 右窗口结束 ---
         
         // --- 底部状态栏 ---
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(5.0f, 3.0f)); // 给状态栏一点内边距
         ImGui::BeginChild("StatusBarRegion", ImVec2(0, 0), true, ImGuiWindowFlags_NoScrollbar);
         ImGui::Text("Maze Status Size: %dx%d", g_mazeWidth, g_mazeHeight);
         ImGui::EndChild();
+        ImGui::PopStyleVar(2); // 弹出为 StatusBarRegion 设置的 WindowPadding
 
         /*
         if (show_maze_view_window) {
@@ -271,7 +351,6 @@ int main(){
         if (show_demo_window){
             ImGui::ShowDemoWindow(&show_demo_window);
         }
-
         ImGui::End();
 
         // --- 渲染 ---
@@ -390,6 +469,33 @@ bool initialize_app_environment(){
     style.Colors[ImGuiCol_Button] = ImVec4(0.26f, 0.59f, 0.98f, 0.70f); // 按钮颜色
     style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.26f, 0.59f, 0.98f, 1.00f);
     style.Colors[ImGuiCol_Header] = ImVec4(0.20f, 0.25f, 0.29f, 0.55f); // CollapsingHeader 颜色
+
+    //--- 菜单 style ---
+    style.Colors[ImGuiCol_MenuBarBg] = ImVec4(0.15f, 0.15f, 0.17f, 1.00f); // 深灰色背景
+    // 弹出菜单的背景色
+    style.Colors[ImGuiCol_PopupBg] = ImVec4(0.2f, 0.2f, 0.23f, 1.00f); // 稍浅一点的灰色
+    // 菜单项的颜色 (MenuItem 通常表现得像 Header)
+    style.Colors[ImGuiCol_Header]        = ImVec4(0.4f, 0.4f, 0.9f, 0.45f); // 正常状态下的菜单项背景
+    style.Colors[ImGuiCol_HeaderHovered] = ImVec4(0.45f, 0.45f, 0.95f, 0.80f); // 鼠标悬停
+    style.Colors[ImGuiCol_HeaderActive]  = ImVec4(0.5f, 0.5f, 1.0f, 1.00f);  // 点击时
+
+    // 调整菜单项的内边距
+    style.FramePadding = ImVec2(6.0f, 4.0f); // x 是水平内边距, y 是垂直内边距
+    // 调整顶级菜单项之间的间距
+    style.ItemSpacing = ImVec2(10.0f, style.ItemSpacing.y);
+    // 窗口和子窗口的圆角、边框等也会影响整体观感
+    style.WindowRounding = 0.0f;
+    style.ChildRounding = 0.0f;
+    style.PopupRounding = 3.0f; // 弹出菜单的圆角
+    style.FrameBorderSize = 0.0f;
+    style.PopupBorderSize = 1.0f;
+
+    style.Colors[ImGuiCol_MenuBarBg] = ImVec4(0.18f, 0.18f, 0.20f, 1.00f);
+    style.Colors[ImGuiCol_PopupBg]   = ImVec4(0.22f, 0.22f, 0.25f, 0.95f);
+
+    //子窗口背景
+    style.Colors[ImGuiCol_ChildBg] = ImVec4(0.12f, 0.12f, 0.14f, 1.00f); // 再把它改成你想要的特定深色
+
         
 
     //设置平台和渲染器后端
@@ -424,4 +530,10 @@ void cleanup_app_environment(){
     glfwDestroyWindow(window);
     glfwTerminate();
     std::cout << "clearn uo resource." << std::endl;
+
+    //mazecareator
+    delete g_myMaze;
+    g_myMaze = nullptr;
+    delete g_current_maze_generator;
+    g_current_maze_generator = nullptr;
 }

@@ -128,10 +128,24 @@ CMakeFiles/mazeApp.dir/src/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mazeApp.dir/src/Renderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangweijia/code/Projects/maze/src/Renderer.cpp -o CMakeFiles/mazeApp.dir/src/Renderer.cpp.s
 
+CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o: CMakeFiles/mazeApp.dir/flags.make
+CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o: /Users/wangweijia/code/Projects/maze/src/DFSMazeGenerator.cpp
+CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o -MF CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o.d -o CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o -c /Users/wangweijia/code/Projects/maze/src/DFSMazeGenerator.cpp
+
+CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wangweijia/code/Projects/maze/src/DFSMazeGenerator.cpp > CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.i
+
+CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wangweijia/code/Projects/maze/src/DFSMazeGenerator.cpp -o CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.s
+
 CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o: CMakeFiles/mazeApp.dir/flags.make
 CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o: /Users/wangweijia/code/Projects/maze/lib/glad/src/glad.c
 CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o -MF CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o.d -o CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o -c /Users/wangweijia/code/Projects/maze/lib/glad/src/glad.c
 
 CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.s: cmake_force
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o: CMakeFiles/mazeApp.dir/flags.make
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o: /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui.cpp
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o -MF CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o.d -o CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o -c /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui.cpp
 
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.i: cmake_force
@@ -159,7 +173,7 @@ CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.s: cmake_force
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o: CMakeFiles/mazeApp.dir/flags.make
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o: /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui_draw.cpp
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o -MF CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o.d -o CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o -c /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui_draw.cpp
 
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.s: cmake_force
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.o: CMakeFiles/mazeApp.dir/flags.make
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.o: /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui_tables.cpp
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.o -MF CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.o.d -o CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.o -c /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui_tables.cpp
 
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.i: cmake_force
@@ -187,7 +201,7 @@ CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_tables.cpp.s: cmake_force
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o: CMakeFiles/mazeApp.dir/flags.make
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o: /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui_widgets.cpp
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o -MF CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o.d -o CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o -c /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui_widgets.cpp
 
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.i: cmake_force
@@ -201,7 +215,7 @@ CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.s: cmake_force
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.o: CMakeFiles/mazeApp.dir/flags.make
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.o: /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui_demo.cpp
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.o -MF CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.o.d -o CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.o -c /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/imgui_demo.cpp
 
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.i: cmake_force
@@ -215,7 +229,7 @@ CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_demo.cpp.s: cmake_force
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o: CMakeFiles/mazeApp.dir/flags.make
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o: /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.o -c /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp
 
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.i: cmake_force
@@ -229,7 +243,7 @@ CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_glfw.cpp.s: cmake_fo
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/mazeApp.dir/flags.make
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o: /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/mazeApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.o -c /Users/wangweijia/code/Projects/maze/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp
 
 CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/backends/imgui_impl_opengl3.cpp.i: cmake_force
@@ -246,6 +260,7 @@ mazeApp_OBJECTS = \
 "CMakeFiles/mazeApp.dir/src/Cell.cpp.o" \
 "CMakeFiles/mazeApp.dir/src/Maze.cpp.o" \
 "CMakeFiles/mazeApp.dir/src/Renderer.cpp.o" \
+"CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o" \
 "CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o" \
 "CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o" \
 "CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o" \
@@ -262,6 +277,7 @@ mazeApp: CMakeFiles/mazeApp.dir/src/main.cpp.o
 mazeApp: CMakeFiles/mazeApp.dir/src/Cell.cpp.o
 mazeApp: CMakeFiles/mazeApp.dir/src/Maze.cpp.o
 mazeApp: CMakeFiles/mazeApp.dir/src/Renderer.cpp.o
+mazeApp: CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o
 mazeApp: CMakeFiles/mazeApp.dir/lib/glad/src/glad.c.o
 mazeApp: CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui.cpp.o
 mazeApp: CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_draw.cpp.o
@@ -274,7 +290,7 @@ mazeApp: CMakeFiles/mazeApp.dir/build.make
 mazeApp: /opt/homebrew/lib/libglfw.3.4.dylib
 mazeApp: /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenGL.framework
 mazeApp: CMakeFiles/mazeApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable mazeApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/wangweijia/code/Projects/maze/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable mazeApp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mazeApp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

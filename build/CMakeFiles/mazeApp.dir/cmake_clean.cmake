@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/mazeApp.dir/lib/imgui-1.91.9/imgui_widgets.cpp.o.d"
   "CMakeFiles/mazeApp.dir/src/Cell.cpp.o"
   "CMakeFiles/mazeApp.dir/src/Cell.cpp.o.d"
+  "CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o"
+  "CMakeFiles/mazeApp.dir/src/DFSMazeGenerator.cpp.o.d"
   "CMakeFiles/mazeApp.dir/src/Maze.cpp.o"
   "CMakeFiles/mazeApp.dir/src/Maze.cpp.o.d"
   "CMakeFiles/mazeApp.dir/src/Renderer.cpp.o"
